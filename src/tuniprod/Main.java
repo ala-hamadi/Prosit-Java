@@ -50,7 +50,11 @@ public class Main {
     Caissier c11 = new Caissier(1, "foulen1", "adresse1", 30, 5);
     Caissier c12 = new Caissier(2, "foulen2", "adresse2", 31, 6);
     Vendeur v11 = new Vendeur(3, "foulen3", "adresse3", 32, (float) 66.2);
-    Responsable r11 = new Responsable(4, "foulen4", "adresse4", 32, (float) 66.2);
+    Responsable r11 = new Responsable(4, "foulen4", "adresse4", 180, (float) 66.2);
+    System.out.println("Salaire " + c11.getNom() + " :" + c11.calculerSalaireEmploye());
+    System.out.println("Salaire " + c12.getNom() + " :" + c12.calculerSalaireEmploye());
+    System.out.println("Salaire " + v11.getNom() + " :" + v11.calculerSalaireEmploye());
+    System.out.println("Salaire " + r11.getNom() + " :" + r11.calculerSalaireEmploye());
 
     mg11.ajouterEmployer(c11);
     mg11.ajouterEmployer(c12);
@@ -64,6 +68,11 @@ public class Main {
     Vendeur v22 = new Vendeur(7, "foulen7", "adresse7", 37, (float) 69.2);
     Vendeur v23 = new Vendeur(8, "foulen8", "adresse8", 38, (float) 60.2);
     Responsable r21 = new Responsable(9, "foulen9", "adresse9", 39, (float) 66.2);
+    System.out.println("Salaire " + c21.getNom() + " :" + c21.calculerSalaireEmploye());
+    System.out.println("Salaire " + v21.getNom() + " :" + v21.calculerSalaireEmploye());
+    System.out.println("Salaire " + v22.getNom() + " :" + v22.calculerSalaireEmploye());
+    System.out.println("Salaire " + v23.getNom() + " :" + v23.calculerSalaireEmploye());
+    System.out.println("Salaire " + r21.getNom() + " :" + r21.calculerSalaireEmploye());
 
     mg12.ajouterEmployer(c21);
     mg12.ajouterEmployer(v21);
@@ -74,8 +83,6 @@ public class Main {
 
     System.out.println(mg11);
     System.out.println(mg12);
-
-
 
   }
 

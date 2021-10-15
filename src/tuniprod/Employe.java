@@ -1,6 +1,6 @@
 package tuniprod;
 
-public class Employe {
+public abstract class Employe {
 
   protected int id;
   protected String nom;
@@ -56,4 +56,6 @@ public class Employe {
         ", nbrHeures=" + nbrHeures +
         '}';
   }
+  public abstract float calculerSalaireEmploye();
+
 }

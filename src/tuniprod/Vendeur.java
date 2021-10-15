@@ -8,4 +8,18 @@ public class Vendeur extends Employe{
     super(id, nom, adresse, nbrHeures);
     this.tauxDeVente=tauxDeVente;
   }
+
+  @Override
+  public String toString() {
+    return "Responsable{" +
+        super.toString()+
+        ", tauxDeVente=" + tauxDeVente +
+        '}';
+  }
+
+  public float calculerSalaireEmploye() {
+    float salaire = 0;
+    salaire = 450 * (tauxDeVente / 100);
+    return salaire;
+  }
 }
