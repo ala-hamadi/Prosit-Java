@@ -84,6 +84,17 @@ public class Main {
     System.out.println(mg11);
     System.out.println(mg12);
 
+    ProduitFruit pf1 = new ProduitFruit(12,"Fraise","marque","Mars","Fruit",45);
+    ProduitFruit pf2 = new ProduitFruit(13,"Pastèque ","marque","Mars","Fruit",45);
+    ProduitFruit pf3 = new ProduitFruit(14,"Fraise","marque","Mars","Fruit",45);
+    ProduitFruit pl1 = new ProduitFruit(15,"Artichauts ","marque","Mars","Legumes",44);
+
+    mg11.ajouterProduit(pf1);
+    mg11.ajouterProduit(pf2);
+    mg11.ajouterProduit(pf3);
+    mg11.ajouterProduit(pl1);
+
+
   }
 
 }

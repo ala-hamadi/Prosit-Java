@@ -102,6 +102,14 @@ public class Produit {
     return p1.getId() == p2.getId() && p1.getLibelle() == p2.getLibelle() && p1.getPrix()==p2.getPrix();
   }
 
+  public String determinerTypeProduit() {
+    if (this instanceof ProduitFruit) {
+      return "Fruit";
+    } else  {
+      return "Legume";
+    }
+  }
+
 }
     
      

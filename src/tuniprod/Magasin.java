@@ -117,4 +117,13 @@ public class Magasin {
       this.nbEmplyes++;
   }
 
+    public float calculStock() {
+      float x = 0;
+      for (int i = 0; i < this.capacite; i++) {
+        if (this.produits[i].determinerTypeProduit().equals("Fruit")) {
+          x += ((ProduitFruit) this.produits[i]).quantite;
+        }
+      }
+      return x;
+    }
 }
