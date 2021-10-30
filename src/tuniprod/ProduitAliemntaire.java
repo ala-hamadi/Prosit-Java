@@ -10,7 +10,7 @@ public class ProduitAliemntaire extends Produit {
     super(id, libelle, marque);
   }
 
-  public ProduitAliemntaire(int id, String libelle, String marque, float prix) {
+  public ProduitAliemntaire(int id, String libelle, String marque, float prix) throws PrixNegatifExcep {
     super(id, libelle, marque, prix);
   }
 

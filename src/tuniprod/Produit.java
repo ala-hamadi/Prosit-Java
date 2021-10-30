@@ -22,12 +22,14 @@ public class Produit {
     this.marque = marque;
   }
 
-  public Produit(int id, String libelle, String marque, float prix) {
+  public Produit(int id, String libelle, String marque, float prix) throws PrixNegatifExcep {
     this.id = id;
     this.libelle = libelle;
     this.marque = marque;
     if (prix >= 0) {
       this.prix = prix;
+    } else {
+      throw new PrixNegatifExcep("Exception: negative");
     }
   }
     
@@ -99,13 +101,13 @@ public class Produit {
   }
 
   public static boolean comparer(Produit p1, Produit p2) {
-    return p1.getId() == p2.getId() && p1.getLibelle() == p2.getLibelle() && p1.getPrix()==p2.getPrix();
+    return p1.getId() == p2.getId() && p1.getLibelle() == p2.getLibelle() && p1.getPrix() == p2.getPrix();
   }
 
   public String determinerTypeProduit() {
     if (this instanceof ProduitFruit) {
       return "Fruit";
-    } else  {
+    } else {
       return "Legume";
     }
   }

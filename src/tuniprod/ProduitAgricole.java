@@ -1,6 +1,7 @@
 package tuniprod;
 
-public class ProduitAgricole extends ProduitAliemntaire{
+public class ProduitAgricole extends ProduitAliemntaire {
+
   String saison;
   String type;
   float quantite;
@@ -18,7 +19,7 @@ public class ProduitAgricole extends ProduitAliemntaire{
     this.quantite = quantite;
   }
 
-  public ProduitAgricole(int id, String libelle, String marque, float prix, String saison, String type, float quantite) {
+  public ProduitAgricole(int id, String libelle, String marque, float prix, String saison, String type, float quantite) throws PrixNegatifExcep {
     super(id, libelle, marque, prix);
     this.saison = saison;
     this.type = type;

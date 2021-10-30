@@ -11,7 +11,7 @@ public class ProduitFruit extends  ProduitAgricole implements Critere{
     super(id, libelle, marque, saison, type, quantite);
   }
 
-  public ProduitFruit(int id, String libelle, String marque, float prix, String saison, String type, float quantite) {
+  public ProduitFruit(int id, String libelle, String marque, float prix, String saison, String type, float quantite) throws PrixNegatifExcep {
     super(id, libelle, marque, prix, saison, type, quantite);
   }
 

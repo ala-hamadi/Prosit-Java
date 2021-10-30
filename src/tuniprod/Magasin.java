@@ -25,7 +25,7 @@ public class Magasin {
     this.id = id;
     this.adresse = adresse;
     this.capacite = 0;
-    this.produits = new Produit[50];
+    this.produits = new Produit[2];
     this.nbEmplyes=0;
     this.employes = new Employe[20];
   }
@@ -46,7 +46,10 @@ public class Magasin {
     return "id= " + this.id + " adresse= " + this.adresse + " capacite= " + this.capacite + " " + str+" "+str2;
   }
 
-  public void ajouterProduit(Produit p) {
+  public void ajouterProduit(Produit p)throws MagasinPleinExcep {
+    if (this.capacite == 2) {
+      throw (new MagasinPleinExcep("Exception: Plein"));
+    }
     if (!isHere(p)) {
       produits[capacite] = p;
       this.capacite++;

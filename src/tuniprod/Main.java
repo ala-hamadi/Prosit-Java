@@ -13,8 +13,18 @@ public class Main {
 
     Produit p0 = new Produit();
     Produit p1 = new Produit(1021, "lait", "Delice");
-    Produit p2 = new Produit(2510, "yaourt", "Vitalait");
-    Produit p3 = new Produit(3250, "Tomate", "Sicam", 1.2f);
+    Produit p2 = new Produit();
+    try {
+      p2 = new Produit(2510, "yaourt", "Vitalait", 5f);
+    } catch (PrixNegatifExcep ex) {
+      System.out.println(ex);
+    }
+    Produit p3 = new Produit();
+    try {
+      p3 = new Produit(3250, "Tomate", "Sicam", 1.2f);
+    } catch (PrixNegatifExcep ex) {
+      System.out.println(ex);
+    }
     p0.afficher();
     p1.afficher();
     p2.afficher();
@@ -37,8 +47,13 @@ public class Main {
     p3.dateExpiration = dateFormat.parse("04/09/2021");
 
     Magasin mg = new Magasin(1, "Nabeul");
-    mg.ajouterProduit(p3);
-    mg.ajouterProduit(p2);
+    try {
+      mg.ajouterProduit(p3);
+      mg.ajouterProduit(p2);
+    } catch (MagasinPleinExcep ex) {
+      System.out.println(ex);
+    }
+
     System.out.println(mg);
     mg.afficherNombreTotal();
 
@@ -60,8 +75,12 @@ public class Main {
     mg11.ajouterEmployer(c12);
     mg11.ajouterEmployer(v11);
     mg11.ajouterEmployer(r11);
-    mg11.ajouterProduit(p1);
-    mg11.ajouterProduit(p2);
+    try {
+      mg11.ajouterProduit(p3);
+      mg11.ajouterProduit(p2);
+    } catch (MagasinPleinExcep ex) {
+      System.out.println(ex);
+    }
 
     Caissier c21 = new Caissier(5, "foulen5", "adresse5", 33, 2);
     Vendeur v21 = new Vendeur(6, "foulen6", "adresse6", 36, (float) 68.2);
@@ -79,21 +98,29 @@ public class Main {
     mg12.ajouterEmployer(v22);
     mg12.ajouterEmployer(v23);
     mg12.ajouterEmployer(r21);
-    mg12.ajouterProduit(p2);
+    try {
+      mg12.ajouterProduit(p3);
+      mg12.ajouterProduit(p2);
+    } catch (MagasinPleinExcep ex) {
+      System.out.println(ex);
+    }
 
     System.out.println(mg11);
     System.out.println(mg12);
 
-    ProduitFruit pf1 = new ProduitFruit(12,"Fraise","marque","Mars","Fruit",45);
-    ProduitFruit pf2 = new ProduitFruit(13,"Pastèque ","marque","Mars","Fruit",45);
-    ProduitFruit pf3 = new ProduitFruit(14,"Fraise","marque","Mars","Fruit",45);
-    ProduitFruit pl1 = new ProduitFruit(15,"Artichauts ","marque","Mars","Legumes",44);
+    ProduitFruit pf1 = new ProduitFruit(12, "Fraise", "marque", "Mars", "Fruit", 45);
+    ProduitFruit pf2 = new ProduitFruit(13, "Pastèque ", "marque", "Mars", "Fruit", 45);
+    ProduitFruit pf3 = new ProduitFruit(14, "Fraise", "marque", "Mars", "Fruit", 45);
+    ProduitFruit pl1 = new ProduitFruit(15, "Artichauts ", "marque", "Mars", "Legumes", 44);
 
-    mg11.ajouterProduit(pf1);
-    mg11.ajouterProduit(pf2);
-    mg11.ajouterProduit(pf3);
-    mg11.ajouterProduit(pl1);
-
+    try {
+      mg11.ajouterProduit(pf1);
+      mg11.ajouterProduit(pf2);
+      mg11.ajouterProduit(pf3);
+      mg11.ajouterProduit(pl1);
+    } catch (MagasinPleinExcep ex) {
+      System.out.println(ex);
+    }
 
   }
 
