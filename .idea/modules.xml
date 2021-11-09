@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TuniProd.iml" filepath="$PROJECT_DIR$/TuniProd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListInterfaceAndCollections.iml" filepath="$PROJECT_DIR$/ListInterfaceAndCollections.iml" />
     </modules>
   </component>
 </project>
